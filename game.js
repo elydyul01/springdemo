@@ -176,7 +176,6 @@ function restartGame() {
     });
     obstacles = [];
 }
-
 /
 let frameCount = 0;
 app.ticker.add(() => {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 if (typeof PIXI === 'undefined') {
     alert('ГРЕШКА: Pixi.js не е зареден! Провери интернет връзката.');
     throw new Error('PIXI is not defined');
@@ -176,7 +177,7 @@ function restartGame() {
     });
     obstacles = [];
 }
-/
+
 let frameCount = 0;
 app.ticker.add(() => {
 

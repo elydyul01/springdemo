@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<form th:replace="~{fragments/PageLayout.html :: head('New Beer')}"></form>
+<body>
+<div class="body-content">
+    <div th:style="text-align">
+        <form th:replace="~{fragments/PageLayout.html :: header}"></form>
+        <form th:replace="~{fragments/BeerForm.html :: beer-form('New Beer')}"></form>
+        <form th:replace="~{fragments/PageLayout.html :: footer}"></form>
+    </div>
+</div>
+</body>
+</html>

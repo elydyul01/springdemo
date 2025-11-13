@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<form th:replace="~{fragments/PageLayout.html :: head('All Beers')}"></form>
+<body>
+<form th:replace="~{fragments/PageLayout.html :: header}"></form>
+
+<div class="body-content">
+    <div th:if="${beers.isEmpty()}">
+        <h2 th:text="#{beers.title.empty}">No Beers</h2>
+    </div>
+    <div th:unless="${beers.isEmpty()}">
+        <h2 th:text="#{beers.title}">All Beers</h2>
+
+        <div class="table">
+            <div class="header">
+                <div class="header-cell" th:text="#{beer.label.name}">Name</div>
+                <div class="header-cell" th:text="#{beer.label.abv}">ABV</div>
+                <div class="header-cell" th:text="#{beer.label.style}">Style</div>
+            </div>
+            <div class="row" th:each="beer : ${beers}">
+                <div class="cell">
+                    <a href="#" th:href="@{/beers/{id}(id=${beer.id})}" th:text="${beer.name}">Beer</a>
+                </div>
+                <div class="cell" th:text="${beer.abv}">4.5</div>
+                <div class="cell" th:text="${beer.style.name}">Style</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form th:replace="~{fragments/PageLayout.html :: footer}"></form>
+</body>
+</html>

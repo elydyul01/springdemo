@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<form th:replace="~{fragments/PageLayout.html :: head('Error Page')}"></form>
+<body>
+<form th:replace="~{fragments/PageLayout.html :: header}"></form>
+
+<div class="body-content">
+    <h2 class="label-error" th:text="${statusCode}">HTTP Status Code</h2>
+    <h3 class="error" th:text="${error}">Error placeholder</h3>
+</div>
+
+<form th:replace="~{fragments/PageLayout.html :: footer}"></form>
+</body>
+</html>
